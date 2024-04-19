@@ -33,8 +33,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // routes
+const emailRoutes = require("./routes/email");
 const userRoutes = require("./routes/user");
 app.use(userRoutes);
+app.use(emailRoutes);
 
 app.get("/", (req, res) => {
   res.setHeader("Access-Control-Allow-Credential", "true");
